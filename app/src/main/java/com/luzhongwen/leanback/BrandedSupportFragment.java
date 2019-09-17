@@ -35,4 +35,26 @@ public class BrandedSupportFragment extends Fragment {
                 .resolveAttribute(androidx.leanback.R.attr.browseTitleViewLayout,typedValue,true);
         return inflater.inflate(found ? typedValue.resourceId : androidx.leanback.R.layout.lb_browse_title,viewGroup,false);
     }
+
+    /**
+     * 初始化
+     * **/
+    public void installTitleView(LayoutInflater inflater, ViewGroup parent,Bundle savedInstanceState) {
+        View titleLayoutRoot = onInflateTitleView(inflater,parent,savedInstanceState);
+        if(titleLayoutRoot != null) {
+           parent.addView(titleLayoutRoot);
+           setTitleView(titleLayoutRoot);
+        } else {
+            setTitleView(null);
+        }
+    }
+
+    public void setTitleView(View titleView) {
+        mTitleView = titleView;
+        if(mTitleView == null) {
+
+        } else {
+
+        }
+    }
 }
